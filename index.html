@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASSET ZERO — Outer Perimeter</title>
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+<body>
+  <div id="boot">
+    <p class="boot-label">FREQ 140.85 · TRANSCEIVER LINK</p>
+    <h1>ASSET ZERO</h1>
+    <p class="boot-blurb">
+      Three sectors through the fortress compound.<br />
+      Infiltrate. Arm yourself. End the commander holding the biometric chain.
+    </p>
+    <ul class="controls">
+      <li><kbd>WASD</kbd> Move</li>
+      <li><kbd>Shift</kbd> Crouch / crawl ducts</li>
+      <li><kbd>Space</kbd> CQC takedown (rear)</li>
+      <li><kbd>E</kbd> Pick up / interact / exfil</li>
+      <li><kbd>F</kbd> Sprint burst</li>
+      <li><kbd>Mouse</kbd> Aim · <kbd>Click</kbd> / <kbd>R</kbd> Fire</li>
+    </ul>
+    <p class="hint">Soldiers path around walls. Bosses fight with live fire — cover matters.</p>
+    <button id="start-btn" type="button">Insert operative</button>
+  </div>
+
+  <div id="hud" hidden>
+    <div class="hud-top">
+      <div>
+        <span class="tag" id="level-tag">SECTOR 1</span>
+        <span id="objective">Recover biometric key</span>
+      </div>
+      <div class="meters">
+        <div class="meter">
+          <label>HEALTH</label>
+          <div class="bar hp"><i id="hp-bar"></i></div>
+        </div>
+        <div class="meter">
+          <label>SIGNATURE</label>
+          <div class="bar"><i id="bleed-bar"></i></div>
+        </div>
+        <div class="meter">
+          <label>ALERT</label>
+          <div class="bar alert"><i id="alert-bar"></i></div>
+        </div>
+        <div class="ammo" id="ammo-readout">UNARMED</div>
+      </div>
+    </div>
+    <div id="boss-hud" class="boss-hud" hidden>
+      <label id="boss-name">COMMANDER</label>
+      <div class="bar boss"><i id="boss-bar"></i></div>
+    </div>
+    <div id="radio" class="radio"></div>
+    <div id="toast"></div>
+  </div>
+
+  <canvas id="game" width="960" height="600" hidden></canvas>
+
+  <div id="end" hidden>
+    <h2 id="end-title"></h2>
+    <p id="end-text"></p>
+    <button id="retry-btn" type="button">Reinsert</button>
+  </div>
+
+  <script src="game.js?v=5"></script>
+</body>
+</html>
